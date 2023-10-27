@@ -20,7 +20,7 @@ applications:
     # More information: https://docs.upsun.com/create-apps/app-reference.html#relationships
     relationships:
       mariadb: "mariadb:mysql"
-      
+
 
     # Mounts define directories that are writable after the build is complete.
     # More information: https://docs.upsun.com/create-apps/app-reference.html#mounts
@@ -28,6 +28,10 @@ applications:
     #   "/.cache": # Represents the path in the app.
     #     source: "local" # "local" sources are unique to the app, while "service" sources can be shared among apps.
     #     source_path: "cache" # The subdirectory within the mounted disk (the source) where the mount should point.
+    mounts:
+      "/web/sites/default/files":
+        source: "local"
+        source_path: "files"
 
     # The web key configures the web server running in front of your app.
     # More information: https://docs.upsun.com/create-apps/app-reference.html#web
@@ -52,8 +56,8 @@ applications:
         "/":
           passthru: "/index.php"
           root: "web"
-          
-        
+
+
 
     # Alternate copies of the application to run as background processes.
     # More information: https://docs.upsun.com/create-apps/app-reference.html#workers
@@ -71,7 +75,7 @@ applications:
     variables:
       env:
         N_PREFIX: "/app/.global"
-        
+
 
     # Outbound firewall rules for the application. More information: https://docs.upsun.com/create-apps/app-reference.html#firewall
     # firewall:
@@ -104,7 +108,7 @@ applications:
         n auto || n lts
         hash -r
         yarn
-        
+
       # The deploy hook is run after the app container has been started, but before it has started accepting requests.
       # More information: https://docs.upsun.com/create-apps/hooks/hooks-comparison.html#deploy-hook
       deploy: |
@@ -136,7 +140,7 @@ services:
   mariadb:
     type: mariadb:10.6 # All available versions are: 10.6, 10.5, 10.4, 10.3
 
-  
+
 
 # The routes of the project.
 #

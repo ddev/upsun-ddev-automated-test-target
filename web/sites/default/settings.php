@@ -778,3 +778,12 @@ if (getenv('IS_DDEV_PROJECT') == 'true' && file_exists(__DIR__ . '/settings.ddev
 # if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
+
+if (getenv('PLATFORM_PROJECT') != "") {
+    $databases['default']['default']['database'] = getenv('DB_PATH');
+    $databases['default']['default']['username'] = getenv('DB_USERNAME');
+    $databases['default']['default']['password'] = getenv('DB_PASSWORD');
+    $databases['default']['default']['host'] = getenv('DB_HOST');
+    $databases['default']['default']['driver'] = getenv('DB_SCHEME');
+    $databases['default']['default']['port'] = getenv('DB_PORT');
+}

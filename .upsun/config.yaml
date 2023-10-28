@@ -72,9 +72,9 @@ applications:
     # access:
 
     # Variables to control the environment. More information: https://docs.upsun.com/create-apps/app-reference.html#variables
-    variables:
-      env:
-        N_PREFIX: "/app/.global"
+#    variables:
+#      env:
+#        N_PREFIX: "/app/.global"
 
 
     # Outbound firewall rules for the application. More information: https://docs.upsun.com/create-apps/app-reference.html#firewall
@@ -90,10 +90,6 @@ applications:
     # the build hook runs using a package manager for the language.
     # More information: https://docs.upsun.com/create-apps/app-reference.html#dependencies
     dependencies:
-      nodejs:
-        n: "*"
-        npx: "*"
-        yarn: "^1.22.0"
       php:
         composer/composer: "^2"
 
@@ -105,9 +101,7 @@ applications:
       build: |
         set -eux
         composer --no-ansi --no-interaction install --no-progress --prefer-dist --optimize-autoloader --no-dev
-        n auto || n lts
         hash -r
-        yarn
 
       # The deploy hook is run after the app container has been started, but before it has started accepting requests.
       # More information: https://docs.upsun.com/create-apps/hooks/hooks-comparison.html#deploy-hook

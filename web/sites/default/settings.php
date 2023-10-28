@@ -787,4 +787,11 @@ if (getenv('PLATFORM_PROJECT') != "") {
     $databases['default']['default']['driver'] = getenv('DB_SCHEME');
     $databases['default']['default']['port'] = getenv('DB_PORT');
     $settings['hash_salt'] = 'bf95508a645408b33848673dba1368d4f976bdb0ee4cd4d5b97dc9ddf9b88211';
+    if (empty($settings['config_sync_directory'])) {
+      $settings['config_sync_directory'] = 'sites/default/files/sync';
+    }
+    $settings['trusted_host_patterns'] = [
+      'platformsh\.site$',
+    ];
+
 }

@@ -20,6 +20,7 @@ applications:
     # More information: https://docs.upsun.com/create-apps/app-reference/single-runtime-image.html#relationships
     relationships:
       mariadb: "mariadb:mysql"
+      mariadb2: "mariadb2:mysql"
 
 
     mounts:

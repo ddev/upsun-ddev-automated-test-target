@@ -19,6 +19,6 @@ composer_version: "2"
 #    - PLATFORM_PROJECT=5dxxbe2vazzdo
 #    - PLATFORM_ENVIRONMENT=pull
 #    - PLATFORM_APP=d10simple
-#    - PLATFORM_PRIMARY_RELATIONSHIP=d10simple
+#    - PLATFORM_PRIMARY_RELATIONSHIP=mariadb
 
 corepack_enable: false

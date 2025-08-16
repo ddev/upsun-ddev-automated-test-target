@@ -5,3 +5,4 @@
 /web/sites/*/files-public
 /web/sites/*/files-private
 /vendor
+.ddev/.env

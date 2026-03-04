@@ -1,6 +1,6 @@
 # Complete list of all available properties: https://docs.upsun.com/create-apps/app-reference/single-runtime-image.html
 applications:
-  ddev-automated-test-target:
+  d10simple:
     # Application source code directory
     source:
       root: "/"
